@@ -1,0 +1,61 @@
+<div class="add_form">
+  <form method="post" enctype="multipart/form-data">
+    <div class="add_form_item">
+      <label for="name">Name:</label>
+      <input type="text" name="tour_name" id="name" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <label for="type">Type of tour:</label>
+      <select id="type" name="tour_type" class="add_form_field" required>
+        <option value="1">Vacation</option>
+        <option value="2">Excursion</option>
+        <option value="3">Shopping</option>
+      </select>
+    </div>
+    <div class="add_form_item">
+      <label for="people">Num. of people:</label>
+      <select id="people" name="tour_people" class="add_form_field" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="add_form_item">
+      <label for="price">Price:</label>
+      <input type="number" name="tour_price" id="price" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <label for="date">Date:</label>
+      <input type="date" name="tour_date" id="date" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <label for="duration">Duration:</label>
+      <input type="number" min="1" max="31" name="tour_duration" id="duration" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <label for="description">Description:</label>
+      <textarea name="tour_description" id="description" class="add_form_field" required></textarea>
+    </div>
+    <div class="add_form_item">
+      <label for="hotel">Hotel:</label>
+      <select name="tour_hotel" id="hotel" class="add_form_field" required>
+      {{#each hotels}}
+        <option value={{id}}>{{name}}</option>
+      {{/each}}
+      </select>
+    </div>
+    <div class="add_form_item">
+      <label for="quantity">Quantity:</label>
+      <input type="number" min="0" max="500" class="add_form_field" name="tour_amount" required>
+    </div>
+    <div class="add_form_item">
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="tour_image" accept=".jpg, .jpeg, .png" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <input type="submit" value="Add" class="button">
+    </div>
+  </form>
+</div>

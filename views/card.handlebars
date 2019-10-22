@@ -1,0 +1,89 @@
+<div class="fullscreen_card">
+  <form enctype="multipart/form-data" id="edit_form">
+    <input type="hidden" name="tourId" value={{tour.id}} id="tour_id">
+    <div class="image_block">
+      <div class="tour_part">
+        <h2>Tour: 
+          <input class="edit hidden" name="name"/> 
+          <span class="property_value">{{tour.name}}</span>
+        </h2>
+        <img src="/images/tours/{{tour.image}}">
+      </div>
+      <div class="hotel_part">
+        <h2>Hotel: {{tour.hotel.name}} {{tour.hotel.stars}}*</h2>
+        <img src="/images/hotels/{{tour.hotel.image}}">
+      </div>
+    </div>
+    <div class="information">
+      <div>
+        <span class="property_name">Type:</span> 
+        <select class="edit hidden" name="type">
+          <option value="1">Vacation</option>
+          <option value="2">Excursion</option>
+          <option value="3">Shopping</option>
+        </select>
+        <span class="property_value">{{tour.type.name}}</span>
+      </div>
+      <div>
+        <span class="property_name">Duration:</span>
+        <input class="edit hidden" name="duration" />
+        <span class="property_value">{{tour.duration}}</span>
+      </div>
+      <div>
+        <span class="property_name">Num. of people:</span>
+        <select class="edit hidden" name="people">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <span class="property_value">{{tour.people}}</span>
+      </div>
+      <div>
+        <span class="property_name">Price:</span>
+        <input class="edit hidden" name="price" /> 
+        $<span class="property_value">{{tour.price}}</span>
+      </div>
+      <div>
+        <span class="property_name">Amount:</span>
+        <input class="edit hidden" name="amount" /> 
+        <span class="property_value">{{tour.amount}}</span>
+      </div>
+      <div>
+        <span class="property_name">Start date:</span>
+        <input type="date" class="edit hidden" name="date"/> 
+        <span class="property_value">{{tour.start_date}}</span>
+      </div>
+    </div>
+    <div class="description">
+      <textarea class="edit hidden" name="description"></textarea>
+      <p>
+        <span class="property_value">{{tour.description}}</span>
+      </p>
+    </div>
+    {{#if authUser}}
+      <div class="error_container"></div>
+      <div class="buttons_container">
+        {{#isManagerOrAdmin authUser.roleId}}
+          <button class="button" id="edit_button">Edit</button>
+          <button type="submit" class="button hidden" id="save" id="submit_button">Save</button>
+          <button class="button hidden" id="delete_button">Delete tour</button>
+        {{else}}
+          {{#if_eq ../authUser.blocked "0"}}
+            <button class="button" id="order_button">Order</button>
+          {{/if_eq}}
+        {{/isManagerOrAdmin}}
+      </div>
+    {{/if}}
+  </form>
+  {{#if authUser}}
+    {{#isManagerOrAdmin authUser.roleId}}
+      <script src="/edit.js"></script>
+    {{else}}
+      {{#if_eq ../authUser.blocked "0"}}
+        <script src="/order.js"></script>
+      {{/if_eq}}
+    {{/isManagerOrAdmin}}
+  {{/if}}
+</div>

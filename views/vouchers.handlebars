@@ -1,0 +1,30 @@
+<div class="table_container">
+  <table>
+    <thead>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">User</span></td>
+        <td><span class="property_name">Tour</span></td>
+        <td><span class="property_name">Status</span></td>
+        <td><span class="property_name">Price</span></td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vouchers}}
+        <tr align="center" class="table_row">
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td><a href="/tours/{{tour.id}}">{{tour.name}}</a></td>
+          <td>{{status.name}}</td>
+          <td>{{tour.price}}</td>
+          {{#if_eq status.id "2"}}
+            <td class="set_status">
+              Set status:
+              <button class="button paid" value={{../id}}>Paid</button>
+              <button class="button canceled" value={{../id}}>Canceled</button>
+            </td>
+          {{/if_eq}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <script src="/setStatus.js"></script>
+</div>

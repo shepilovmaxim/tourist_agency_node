@@ -1,0 +1,54 @@
+<div class="table_container account">
+  <table>
+    <tbody>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">Role:</span></td>
+        <td>{{role authUser.roleId}}</td>
+      </tr>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">First name:</span></td>
+        <td>{{authUser.firstName}}</td>
+      </tr>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">Last name:</span></td>
+        <td>{{authUser.lastName}}</td>
+      </tr>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">Email:</span></td>
+        <td>{{authUser.email}}</td>
+      </tr>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">Phone number:</span></td>
+        <td>{{authUser.phoneNumber}}</td>
+      </tr>
+      <tr align="center" class="table_row">
+        <td><span class="property_name">Login:</span></td>
+        <td>{{authUser.login}}</td>
+      </tr>
+      {{#if_eq authUser.blocked "1"}}
+        <tr align="center" class="table_row">
+          <td><span class="property_name" style="font-weight: bold">Status:</span></td>
+          <td><span style="font-weight: bold">Blocked</span></td>
+        </tr>
+      {{/if_eq}}
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr align="center" class="table_row">
+        <th><span class="property_name">Tour</span></th>
+        <th><span class="property_name">Price</span></th>
+        <th><span class="property_name">Status</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each vouchers}}
+        <tr align="center" class="table_row">
+          <td><a href="/tours/{{tour.id}}">{{tour.name}}</a></td>
+          <td>{{tour.price}}</td>
+          <td>{{status.name}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

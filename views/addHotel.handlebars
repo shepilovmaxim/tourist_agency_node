@@ -1,0 +1,25 @@
+<div class="add_form">
+  <form method="post" enctype="multipart/form-data">
+    <div class="add_form_item">
+      <label for="name">Name:</label>
+      <input type="text" name="hotel_name" id="name" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <label for="stars">Stars:</label>
+      <select name="hotel_stars" id="stars" class="add_form_field" required>
+        <option value="1">1*</option>
+        <option value="2">2*</option>
+        <option value="3">3*</option>
+        <option value="4">4*</option>
+        <option value="5">5*</option>
+      </select>
+    </div>
+    <div class="add_form_item">
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="hotel_image" accept=".jpg, .jpeg, .png" class="add_form_field" required>
+    </div>
+    <div class="add_form_item">
+      <input type="submit" value="Add" class="button">
+    </div>
+  </form>
+</div>

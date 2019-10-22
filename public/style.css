@@ -1,0 +1,239 @@
+body, select, input, textarea {
+  margin: 0;
+  font-size: 18px;
+  font-family: "Segoe UI"; 
+}
+
+input[type="file"] {
+  font-size: 13px;
+}
+
+p {
+  margin: 0 0 1vh 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+th {
+  font-weight: normal;
+  padding: 10px 0;
+  width: 10vw;
+}
+
+span.property_name {
+  color: rgba(0,0,0,0.5);
+}
+
+span.hidden, textarea.hidden, select.hidden, button.hidden, input.hidden {
+  display: none;
+}
+
+nav {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(248, 249, 250);
+  padding: 0 10vw;
+  box-sizing: border-box;
+}
+
+.table_container {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 30px;
+}
+
+td {
+  padding: 10px 0;
+  width: 10vw;
+  border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+
+.set_status {
+  width: auto;
+  border: none;
+}
+
+.add_form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add_form form {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+.alert {
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.add_form_item {
+  margin-bottom: 10px;
+}
+
+.add_form_item label {
+  display: block;
+}
+
+.add_form_field {
+  width: 220px;
+  height: 30px;
+}
+
+.nav_link {
+  display: inline-block;
+  color: rgb(0, 123, 255);
+  text-decoration: none;
+  margin: 0 2vw;
+}
+
+.logo {
+  display: flex;
+  justify-content: center; 
+  background-color: #e9ecef;
+  padding: 5vh;
+}
+
+.logo img {
+  height: 30vh;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+}
+
+.form form {
+  width: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  padding: .5rem .5rem;
+  font-size: .875rem;
+  border-radius: .2rem;
+  color: #6c757d;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.tours {
+  display: flex;
+  padding-top: 2vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tour_card {
+  border-radius: .25rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 2vw 2vh 2vw;
+}
+
+.tour_card img {
+  height: 250px;
+  width: 360px;
+  border-radius: .25rem .25rem 0 0; 
+}
+
+.tour_card .button {
+  margin-top: 10px;
+}
+
+.fullscreen_card {
+  background-color: #e9ecef;
+}
+
+.fullscreen_card img {
+  height: 450px;
+  width: 675px;
+}
+
+.image_block, .information {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.image_block input, .information input {
+  width: 75px;
+}
+
+.information input[type="date"] {
+  width: 150px;
+}
+
+.image_block {
+  padding: 0 3vw;
+  flex-wrap: wrap;
+}
+
+.information {
+  padding: 1vh 3vw 0 3vw;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0 2vh 0;
+  flex-wrap: wrap;
+}
+
+.description p, .description textarea {
+  width: 80vw;
+  text-align: center;
+  height: auto;
+}
+
+.description textarea {
+  resize: none;
+}
+
+.error_container {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons_container .button {
+  margin: 5px;
+}

@@ -1,0 +1,33 @@
+<div class="table_container">
+  <table>
+    <thead>
+      <tr align="center" class="table_row">
+        <th><span class="property_name">Role</span></th>
+        <th><span class="property_name">First name</span></th>
+        <th><span class="property_name">Last name</span></th>
+        <th><span class="property_name">Email</span></th>
+        <th><span class="property_name">Phone number</span></th>
+        <th><span class="property_name">Login</span></th>
+        <th><span class="property_name">Status</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+        <tr align="center" class="table_row">
+          <td style="font-weight: bold">{{role.name}}</td>
+          <td>{{firstName}}</td>
+          <td>{{lastName}}</td>
+          <td>{{email}}</td>
+          <td>{{phoneNumber}}</td>
+          <td>{{login}}</td>
+          <td>
+            <form method="post">
+              <input type="hidden" name="userId" value={{id}}>
+              <input type="submit" name="ban" class="button" value={{#if blocked}}"Unban"{{else}}"Ban"{{/if}}>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

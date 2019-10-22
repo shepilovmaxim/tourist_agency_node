@@ -1,0 +1,66 @@
+<div class="logo">
+  <img src="/images/big_logo.png">
+</div>
+<div class="form">
+  <form method="post">
+    <div>
+      <label for="type">Type of tour:</label>
+      <select id="type" name="typeId">
+        <option value="0">Any</option>
+        <option value="1">Vacation</option>
+        <option value="2">Excursion</option>
+        <option value="3">Shopping</option>
+      </select>
+    </div>
+    <div>
+      <label for="people">Num. of people:</label>
+      <select id="people" name="people">
+        <option value="0">Any</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label for="hotel">Hotel:</label>
+      <select id="hotel" name="stars">
+        <option value="0">Any</option>
+        <option value="1">1*</option>
+        <option value="2">2*</option>
+        <option value="3">3*</option>
+        <option value="4">4*</option>
+        <option value="5">5*</option>
+      </select>
+    </div>
+    <div class="price_range">
+      <p>
+        <label for="amount">Price range:</label>
+        <input type="text" id="amount" name="amount" readonly style="border:0;">
+        <input type="hidden" id="hiddenMax" value={{max}}>
+      </p>
+      <div id="slider-range"></div>
+    </div>
+    <input type="submit" class="button" value="Show">
+  </form>
+  <script src="/slider.js"></script>
+</div>
+
+<div class="tours">
+  {{#each tours}}
+  <div class="tour_card">
+    <img src="/images/tours/{{image}}">
+    <ul>
+      <li><span class="property_name">Name:</span> {{name}}</li>
+      <li><span class="property_name">Type:</span> {{type.name}}</li>
+      <li><span class="property_name">Date:</span> {{start_date}}</li>
+      <li><span class="property_name">Duration:</span> {{duration}}</li>
+      <li><span class="property_name">Num. of people:</span> {{people}}</li>
+      <li><span class="property_name">Price:</span> ${{price}}</li>
+      <li>
+        <a class="button" href="/tours/{{id}}">Details</a>
+      </li>
+    </ul>
+  </div>
+  {{/each}}
