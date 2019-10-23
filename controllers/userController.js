@@ -4,6 +4,7 @@ const Status = require("../models/Status");
 const Tour = require("../models/Tour");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
+const db = require("../db/database");
 
 /* GET /user/login */
 exports.showLoginForm = async (req, res) => {
