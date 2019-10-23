@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 3000;
 const express = require("express");
 const exphbs = require("express-handlebars");
 const flash = require("connect-flash");
@@ -75,4 +76,4 @@ app.use("/tours", tourRouter);
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 
-app.listen(3000);
+app.listen(PORT);
